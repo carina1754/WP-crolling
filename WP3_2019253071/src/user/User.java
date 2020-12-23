@@ -1,12 +1,14 @@
 package user;
 public class User {
-	private String id;
-	private String email;
-	private String pw1;
-	private String pw2;
-	private String pw;
-	private String call;
-	private String name;
+	private String id="1";
+	private String email="1";
+	private String pw1="1";
+	private String pw2="1";
+	private String pw="1";
+	private String call="1";
+	private String name="1";
+	private String age="1";
+	private String loc="1";
 	public String getid() {
 		return id;
 	}
@@ -48,5 +50,17 @@ public class User {
 	}
 	public void setname(String name) {
 		this.name = name;
+	}
+	public String getage() {
+		return age;
+	}
+	public void setage(String age) {
+		this.age = age;
+	}
+	public String getloc() {
+		return loc;
+	}
+	public void setloc(String loc) {
+		this.loc = loc;
 	}
 }

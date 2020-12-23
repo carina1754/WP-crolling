@@ -24,12 +24,26 @@
 					script.println("history.back()");
 					script.println("</script>");
 				}
-				if(result == 1){ 
+				
+				if(result == 1 && user.getloc().equals("3")){ 
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("location.href = 'main.jsp'");
 					script.println("</script>");
 				}
+				if(result == 1 && user.getloc().equals("2")){ 
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("location.href = 'main-gangwon.jsp'");
+					script.println("</script>");
+				}
+				if(result == 1 && user.getloc().equals("1")){ 
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("location.href = 'main-seoul.jsp'");
+					script.println("</script>");
+				}
+				
 				else {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");

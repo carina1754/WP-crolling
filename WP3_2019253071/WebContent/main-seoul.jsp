@@ -23,10 +23,10 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-       <li class="nav-item active">
+            <li class="nav-item">
         <a class="nav-link" href="main.jsp">전지역</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="main-seoul.jsp">서울</a>
       </li>
       <li class="nav-item">
@@ -47,62 +47,59 @@
 <table class="table table-hover">
 <thead>
     <tr>
-      <th scope="col">지역</th>
+      <th scope="col">서울(구단위)</th>
       <th scope="col">총 확진자 수</th>
-      <th scope="col">신규 확진자</th>
     </tr>
   </thead>
   <tbody>
 <%
-Document doc = Jsoup.connect("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%BD%94%EB%A1%9C%EB%82%98+%ED%99%95%EC%A7%84%EC%9E%90").get();
+Document doc = Jsoup.connect("https://www.seoul.go.kr/coronaV/coronaStatus.do").get();
 // 파싱할 사이트를 적어, 모든 태그를 가져온다.
 
 
-Elements posts = doc.body().getElementsByClass("csp_table_area");
+Elements posts = doc.body().getElementsByClass("tstyle-status pc pc-table");
             // sc cs_language_test _sc_language_test속성의 모든 태그를 가져온다.      
 
 
 int i=0;
 int k=0;
-String loc="";
-String all="";
-String day="";
-for(Element e : posts.select("td")){
+int num=0;
+String loc[] = new String[26];
+String all[] = new String[26];
+String a1 = "";
+String a2 = "";
+for(Element e : posts.select("th")){
+		  loc[num] = e.text();
+		  num++;
+	}
+num=0;
+for(Element a : posts.select("td:not(.today)")){
+		all[num] = a.text();
+		num++;
+}
 //td 속성 요소값들을 반복해서 출력(td속성 갯수만큼), :not을 통해 align_center class의 td 요소는 제외 (알림 부분)
-  if(k>=54){
-	  break;
-  }
-  if(i==0){
-	  loc = e.text();}
-  if(i==1){
-	  all = e.text();}
-  if(i==2){
-	  day = e.text();}
-  i++;
-  k++;
-  if(i==3){
-	  %>
-	    	<tr class="table-info">
-      <td><%=loc %></td>
-       <td><%=all %></td>
-        <td><%=day %></td>
-    </tr>
-	  <%
-	  i=0;
-  }
- }	 
+	for(num=0;num<18;num++){
+		a1 = loc[num];
+		a2 = all[num];
+		  %>
+		   <tr class="table-info">
+	      <td><%=a1 %></td>
+	       <td><%=a2 %></td>
+	    </tr>
+		  <%
+	  } 
 %>
         </table>
 <table class="table table-hover">
 <thead>
     <tr>
-      <th scope="col">실시간 전국 기사</th>
+      <th scope="col">실시간 서울 기사</th>
       <th scope="col">링크</th>
     </tr>
   </thead>
   <tbody>
 <%
-doc = Jsoup.connect("https://search.naver.com/search.naver?where=news&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%99%95%EC%A7%84%EC%9E%90&sm=tab_srt&sort=1&photo=0&field=0&reporter_article=&pd=0&ds=&de=&docid=&nso=so%3Add%2Cp%3Aall%2Ca%3Aall&mynews=0&refresh_start=0&related=0").get();
+doc = Jsoup.connect("https://search.naver.com/search.naver?sm=tab_hty.top&where=news&query=%EC%84%9C%EC%9A%B8+%EC%BD%94%EB%A1%9C%EB%82%98&oquery=%EC%84%9C%EC%9A%B8%EC%8B%9C+%EC%BD%94%EB%A1%9C%EB%82%98&tqi=U%2BLLNdprvhGssLdsSPhssssstNs-519857").get();
 // 파싱할 사이트를 적어, 모든 태그를 가져온다.
 out.println("<br>");
 posts = doc.body().getElementsByClass("list_news");

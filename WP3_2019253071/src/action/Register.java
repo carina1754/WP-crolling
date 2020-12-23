@@ -33,7 +33,7 @@ public class Register {
 		    	System.out.println("sucess");
 	        BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\user.txt",true));
 	        PrintWriter pr = new PrintWriter(bw,true);
-	        pr.write(String.format("%s %s %s %s %s\n", user.getid(),user.getpw1(),user.getname(),user.getcall(),user.getemail()));
+	        pr.write(String.format("%s %s %s %s %s %s %s\n", user.getid(),user.getpw1(),user.getname(),user.getcall(),user.getemail(),user.getage(),user.getloc()));
 	        pr.flush();
 	        pr.close();
 	        return 1;

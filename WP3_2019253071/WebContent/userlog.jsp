@@ -9,8 +9,8 @@
 <meta charset="EUC-KR">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand">2019253071 안정수</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">COVID-19</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,8 +18,13 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="main.jsp">메인
-        </a>
+        <a class="nav-link" href="main.jsp">전지역</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="main-seoul.jsp">서울</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="main-gangwon.jsp">강원</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="userlist.jsp">회원목록</a>
@@ -52,7 +57,7 @@ try {
       String id = temp[0];
       String time = temp[1];
   %>
-      <tr class="table-primary">
+      <tr class="table-info">
       <td><%=id %></td>
       <td><%=time %></td>
     </tr>

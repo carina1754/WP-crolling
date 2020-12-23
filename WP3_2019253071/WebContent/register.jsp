@@ -3,11 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+#register_wrapper{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+</style>
 <link href="style.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 </head>
 <body>
+
 <form method="post" action="registerAction.jsp">
+<div id="register_wrapper">
   <fieldset>
     <legend>회원가입</legend>
     <div class="form-group">
@@ -34,8 +44,29 @@
       <label for="InputEmail">이메일 주소</label>
       <input type="email" class="form-control" name="email" placeholder="email@example.com">
     </div>
-      </fieldset>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('range').onchange = function () {
+            document.getElementById('rangeValue').innerText = this.value +" 세"
+        }
+    });
+</script>
+       <div class="form-group">
+      <label for="InputAge">현재 나이</label>
+       <p id='rangeValue'>50 세</p>
+      <input type="range" id="range" class="custom-range" name="age">
+          </div>
+      <div class="form-group">
+    <select class="custom-select" name="loc">
+      <option selected="">자신의 지역을 고르세요</option>
+      <option value="1">서울</option>
+      <option value="2">강원</option>
+      <option value="3">그외</option>
+    </select>
+  </div>
+    </fieldset>
     <button type="submit" class="btn btn-primary btn-lg btn-block">회원가입</button>
+    </div>
 </form>
 </body>
 </html>

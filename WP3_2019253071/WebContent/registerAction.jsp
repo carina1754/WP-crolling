@@ -11,6 +11,8 @@
 <jsp:setProperty name="user" property="name" />
 <jsp:setProperty name="user" property="pw1" />
 <jsp:setProperty name="user" property="pw2" />
+<jsp:setProperty name="user" property="age" />
+<jsp:setProperty name="user" property="loc" />
 <!DOCTYPE html>
 <html>
 <head> 
@@ -19,6 +21,7 @@
 </head>
 <body>
 	<%
+				System.out.println(user.getloc());
 				Register userData = new Register();
 				int result = userData.upload(user);				
 				if(result == 0){ 
@@ -31,7 +34,7 @@
 				if(result == 1){ 
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("location.href = 'main.jsp'");
+					script.println("location.href = 'login.jsp'");
 					script.println("</script>");
 				}
 				if(result == 2){ 

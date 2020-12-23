@@ -20,6 +20,7 @@
 <body>
 <div id="login_wrapper">
 <form method="post" action="loginAction.jsp">
+ 		<h2>코로나 확진자 추계</h2>
 		<div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge">아이디</label>
   <input class="form-control form-control-lg" type="text" placeholder="ID" name="id">
@@ -29,11 +30,11 @@
   <input class="form-control form-control-lg" type="text" placeholder="Password" name="pw">
 </div>
 <div class="form-group">
-<button type="submit" class="btn btn-primary btn-lg btn-block">로그인</button>
+<button type="submit" class="btn btn-info btn-lg btn-block">로그인</button>
 </div>
 </form>
 <div class="form-group">
-<button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='register.jsp'">회원가입</button>
+<button type="button" class="btn btn-info btn-lg btn-block" onclick="location.href='register.jsp'">회원가입</button>
 </div>
 </div>
 </body>

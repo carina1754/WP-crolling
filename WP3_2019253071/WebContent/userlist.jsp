@@ -9,8 +9,8 @@
 <meta charset="EUC-KR">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand">2019253071 안정수</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">COVID-19</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button> 
@@ -18,8 +18,13 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="main.jsp">메인
-        </a>
+        <a class="nav-link" href="main.jsp">전지역</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="main-seoul.jsp">서울</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="main-gangwon.jsp">강원</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="userlist.jsp">회원목록</a>
@@ -45,6 +50,8 @@ try {
       <th scope="col">이름</th>
       <th scope="col">전화번호</th>
       <th scope="col">이메일</th>
+      <th scope="col">나이</th>
+      <th scope="col">지역</th>
     </tr>
   </thead>
   <tbody>
@@ -55,12 +62,22 @@ try {
       String name = temp[2];
       String call = temp[3];
       String email = temp[4];
+      String age = temp[5];
+      String loc = temp[6];
+      if(loc.equals("1"))
+    	  loc="서울";
+      else if(loc.equals("2"))
+    	  loc="강원";
+      else if(loc.equals("3"))
+    	  loc="서울,강원 외";
   %>
-      <tr class="table-primary">
+      <tr class="table-info">
       <td><%=id %></td>
       <td><%=name %></td>
       <td><%=call %></td>
       <td><%=email %></td>
+      <td><%=age %> 세</td>
+      <td><%=loc %></td>
     </tr>
  <%
   }
