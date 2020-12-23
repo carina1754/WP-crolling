@@ -8,11 +8,12 @@
 <jsp:setProperty name="user" property="id" />
 <jsp:setProperty name="user" property="email" /> 
 <jsp:setProperty name="user" property="call" />
+<jsp:setProperty name="user" property="name" />
 <jsp:setProperty name="user" property="pw1" />
 <jsp:setProperty name="user" property="pw2" />
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="EUC-KR">
 </head>

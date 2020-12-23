@@ -12,8 +12,7 @@ public class Login {
 		Log log = new Log();
 		try {
 			String line = "";
-			String path = Register.class.getResource("").getPath();
-			BufferedReader reader = new BufferedReader(new FileReader(path +"user.txt"));
+			BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\user.txt"));
 		    while ((line = reader.readLine()) != null) { 
 		        String[] temp = line.split(" ");
 		        if(temp[0].equals(user.getid())) {

@@ -13,7 +13,7 @@
   <a class="navbar-brand">2019253071 안정수</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> 
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
@@ -37,8 +37,7 @@
 <%
 try {
 	String line = "";
-	String path = Register.class.getResource("").getPath();
-	BufferedReader reader = new BufferedReader(new FileReader(path +"user.txt"));
+	BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\user.txt"));
 %>
   <thead>
     <tr>

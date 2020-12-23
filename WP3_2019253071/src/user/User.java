@@ -28,14 +28,14 @@ public class User {
 	public String getpw1() {
 		return pw1;
 	}
-	public void setpw1(String pw) {
-		this.pw1 = pw;
+	public void setpw1(String pw1) {
+		this.pw1 = pw1;
 	}
 	public String getpw2() {
 		return pw2;
 	}
-	public void setpw2(String pw) {
-		this.pw2 = pw;
+	public void setpw2(String pw1) {
+		this.pw2 = pw1;
 	}
 	public String getcall() {
 		return call;

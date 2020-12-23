@@ -19,11 +19,11 @@
       <input type="password" class="form-control" name="pw1" placeholder="Password">
     </div>
     <div class="form-group">
-      <label for="InputPassword1">비밀번호 재입력</label>
+      <label for="InputPassword2">비밀번호 재입력</label>
       <input type="password" class="form-control" name="pw2" placeholder="Re-Password">
     </div>
         <div class="form-group">
-        <label for="InputCall">이름</label>
+        <label for="InputName">이름</label>
       <input type="text" class="form-control" name="name" placeholder="홍길동">
     </div>
     <div class="form-group">

@@ -1,6 +1,1 @@
-asd yyyy년MM월dd일 HH시mm분ss초
-asd yyyy년MM월dd일 HH시mm분ss초
-asd yyyy년MM월dd일 HH시mm분ss초
-asd yyyy년MM월dd일 HH시mm분ss초
-asd yyyy년MM월dd일 HH시mm분ss초
-asd yyyy년MM월dd일 HH시mm분ss초
+sdf 2020년12월23일18시09분02초
