@@ -27,7 +27,7 @@
 </div>
 <div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge">비밀번호</label>
-  <input class="form-control form-control-lg" type="text" placeholder="Password" name="pw">
+  <input class="form-control form-control-lg" type="password" placeholder="Password" name="pw">
 </div>
 <div class="form-group">
 <button type="submit" class="btn btn-info btn-lg btn-block">로그인</button>
