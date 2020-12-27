@@ -42,7 +42,7 @@
 <%
 try {
 	String line = "";
-	BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\log.txt"));
+	BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\log.txt"));//파일입출력 읽기
 %>
   <thead>
     <tr>
@@ -52,10 +52,10 @@ try {
   </thead>
   <tbody>
   <%
-  while ((line = reader.readLine()) != null) { 
-      String[] temp = line.split(" "); // , : 구분자
-      String id = temp[0];
-      String time = temp[1];
+  while ((line = reader.readLine()) != null) { //파일끝까지 읽기
+      String[] temp = line.split(" "); ////공백기준으로 문자열 나누기
+      String id = temp[0];//아이디 출력 변수
+      String time = temp[1];//로그시간 출력 변수
   %>
       <tr class="table-info">
       <td><%=id %></td>

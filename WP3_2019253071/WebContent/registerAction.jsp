@@ -21,37 +21,36 @@
 </head>
 <body>
 	<%
-				System.out.println(user.getloc());
-				Register userData = new Register();
-				int result = userData.upload(user);				
-				if(result == 0){ 
+				Register userData = new Register();//레지스터 객체 생성
+				int result = userData.upload(user);//회원가입 결과 출력 변수
+				if(result == 0){//회원가입 실패시
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('다시 입력해주세요')");
 					script.println("history.back()");
 					script.println("</script>");
 				}
-				if(result == 1){ 
+				if(result == 1){//회원가입 성공시
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("location.href = 'login.jsp'");
 					script.println("</script>");
 				}
-				if(result == 2){ 
+				if(result == 2){//아이디가 중복일 시
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('아이디가 중복입니다')");
 					script.println("history.back()");
 					script.println("</script>");
 				}
-				if(result == 3){ 
+				if(result == 3){//비밀번호가 안맞을 시
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('비밀번호가 일치하지 않습니다')");
 					script.println("history.back()");
 					script.println("</script>");
 				}
-				else {
+				else {//회원가입 예외처리
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('다시 입력해주세요')");

@@ -45,7 +45,7 @@
       <input type="email" class="form-control" name="email" placeholder="email@example.com">
     </div>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {//slider의 실시간 데이터를 가져와서 숫자를 표시해주는 함수
         document.getElementById('range').onchange = function () {
             document.getElementById('rangeValue').innerText = this.value +" 세"
         }

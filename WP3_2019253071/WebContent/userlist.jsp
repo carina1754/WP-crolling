@@ -42,7 +42,7 @@
 <%
 try {
 	String line = "";
-	BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\user.txt"));
+	BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\buleb\\git\\WP-crolling\\WP3_2019253071\\src\\action\\user.txt"));//파일 입출력 읽기
 %>
   <thead>
     <tr>
@@ -56,14 +56,14 @@ try {
   </thead>
   <tbody>
   <%
-  while ((line = reader.readLine()) != null) { 
-      String[] temp = line.split(" "); // , : 구분자
-      String id = temp[0];
-      String name = temp[2];
-      String call = temp[3];
-      String email = temp[4];
-      String age = temp[5];
-      String loc = temp[6];
+  while ((line = reader.readLine()) != null) { //파일 끝까지 읽기
+      String[] temp = line.split(" "); //공백기준으로 문자열 나누기
+      String id = temp[0];//아이디 출력 변수
+      String name = temp[2];//이름 출력 변수
+      String call = temp[3];//전화번호 출력 변수
+      String email = temp[4];//이메일 출력 변수
+      String age = temp[5];//나이 출력변수
+      String loc = temp[6];//지역 출력 변수
       if(loc.equals("1"))
     	  loc="서울";
       else if(loc.equals("2"))

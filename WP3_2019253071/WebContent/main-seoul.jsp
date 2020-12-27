@@ -53,32 +53,26 @@
   </thead>
   <tbody>
 <%
-Document doc = Jsoup.connect("https://www.seoul.go.kr/coronaV/coronaStatus.do").get();
-// 파싱할 사이트를 적어, 모든 태그를 가져온다.
+Document doc = Jsoup.connect("https://www.seoul.go.kr/coronaV/coronaStatus.do").get();// 파싱할 사이트 변수
+
+Elements posts = doc.body().getElementsByClass("tstyle-status pc pc-table");//tstyle-status pc pc-table속성의 모든 태그를 긇어옴       
 
 
-Elements posts = doc.body().getElementsByClass("tstyle-status pc pc-table");
-            // sc cs_language_test _sc_language_test속성의 모든 태그를 가져온다.      
-
-
-int i=0;
-int k=0;
-int num=0;
-String loc[] = new String[26];
-String all[] = new String[26];
-String a1 = "";
-String a2 = "";
-for(Element e : posts.select("th")){
+int num=0;//반복문 변수
+String loc[] = new String[26];//지역 배열
+String all[] = new String[26];//지역별 총확진자 배열 
+String a1 = "";//출력 변수
+String a2 = "";//출력 변수
+for(Element e : posts.select("th")){//th 속성 요소값들을 반복해서 출력
 		  loc[num] = e.text();
 		  num++;
 	}
 num=0;
-for(Element a : posts.select("td:not(.today)")){
+for(Element a : posts.select("td:not(.today)")){//td 속성 요소값들을 반복해서 출력, :not을 통해 today의 td 요소는 제외
 		all[num] = a.text();
 		num++;
 }
-//td 속성 요소값들을 반복해서 출력(td속성 갯수만큼), :not을 통해 align_center class의 td 요소는 제외 (알림 부분)
-	for(num=0;num<18;num++){
+	for(num=0;num<26;num++){//26개의 지역의 지역과 총 확진자 분포 출력 
 		a1 = loc[num];
 		a2 = all[num];
 		  %>
@@ -99,27 +93,20 @@ for(Element a : posts.select("td:not(.today)")){
   </thead>
   <tbody>
 <%
-doc = Jsoup.connect("https://search.naver.com/search.naver?sm=tab_hty.top&where=news&query=%EC%84%9C%EC%9A%B8+%EC%BD%94%EB%A1%9C%EB%82%98&oquery=%EC%84%9C%EC%9A%B8%EC%8B%9C+%EC%BD%94%EB%A1%9C%EB%82%98&tqi=U%2BLLNdprvhGssLdsSPhssssstNs-519857").get();
-// 파싱할 사이트를 적어, 모든 태그를 가져온다.
+doc = Jsoup.connect("https://search.naver.com/search.naver?sm=tab_hty.top&where=news&query=%EC%84%9C%EC%9A%B8+%EC%BD%94%EB%A1%9C%EB%82%98&oquery=%EC%84%9C%EC%9A%B8%EC%8B%9C+%EC%BD%94%EB%A1%9C%EB%82%98&tqi=U%2BLLNdprvhGssLdsSPhssssstNs-519857").get(); // 파싱할 사이트 변수
 out.println("<br>");
-posts = doc.body().getElementsByClass("list_news");
-            // sc cs_language_test _sc_language_test속성의 모든 태그를 가져온다.      
-i=0;
-for(Element e : posts.select("div:not(.news_cluster) a")){
-//td 속성 요소값들을 반복해서 출력(td속성 갯수만큼), :not을 통해 align_center class의 td 요소는 제외 (알림 부분)
-if(!e.attr("title").equals("")){
-	String title = e.attr("title");
-	String link = e.attr("href");
+posts = doc.body().getElementsByClass("list_news");//list_news속성의 모든 태그를 긇어옴   
+for(Element e : posts.select("div:not(.news_cluster) a")){//div 속성 중 a 요소값들을 반복해서 출력, :not을 통해 news_cluster의 a 요소는 제외
+if(!e.attr("title").equals("")){//title요소가 널이 아닐시
+	String title = e.attr("title");//title 출력 변수
+	String link = e.attr("href");//링크 출력 변수
 	%>
 	<tr class="table-info">
       <td><%=title %></td>
       <td><input type="button" class="btn btn-info"value="기사 바로가기" onclick="location.href='<%=link %>'"/></td>
     </tr>
 	<%
-  i++;
   }
-else
-	 i++;
  }	
 %>
         </table>
